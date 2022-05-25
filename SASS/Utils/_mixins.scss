@@ -1,0 +1,47 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+@mixin between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin after {
+
+    content: "";
+    border-bottom: 3px solid $color-tertairy;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    left: 1px;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+@mixin color {
+    background: $gradient;
+}
+
+@mixin gradient {
+    background-color: linear-gradient(180deg, $color-secondary 0%, $color-primary 100%);
+}
+
+@mixin text {
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+    color: #8f8d8f;
+    font-weight: lighter;
+}

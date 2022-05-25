@@ -1,0 +1,801 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
+@import "../Utils/variables";
+@import "../Utils/mixins";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: auto;
+
+}
+
+main {
+  height: 1500px;
+}
+
+header {
+
+  @include center;
+
+  .header {
+    width: 90%;
+    @include around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+  }
+
+  & a i {
+    color: black;
+  }
+
+
+  & img {
+
+    font-weight: bold;
+    font-family: "Shrikhand", cursive;
+    margin: auto;
+    height: 35px;
+
+
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.img-menu img {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  object-fit: cover;
+}
+
+.block__meal {
+  background: #f2f2f2;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+  top: -60px;
+  width: 100%;
+  height: 1300px;
+
+}
+
+.dish {
+  width: 89%;
+}
+
+.titre_menu {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.apparence-heart,
+.icon-card-heart {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  color: #5A5A5A;
+  font-size: 27px;
+  opacity: 0;
+}
+
+.icon-card-heart {
+  opacity: 1;
+
+}
+
+.titre_menu h1 {
+  margin: 20px 0 20px 20px ;
+  font-family: Shrikhand;
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+@keyframes animation-heart {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+.icon-heart-animation:hover {
+  animation: animation-heart 0.2s;
+  opacity: 1;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.block__entry-titre {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color: #8f8d8f;
+  font-weight: lighter;
+
+  &::after {
+    @include after
+  }
+}
+
+.block__entry__bloc__1,
+.block__flat__bloc__2,
+.block__dessert__bloc__3 {
+  display: grid;
+  gap: 20px;
+}
+
+.dish {
+
+  background-color: white;
+  border-radius: 20px;
+  height: 70px;
+  box-shadow: 1px 3px 7px 0px #b0aeae;
+  margin: 5px 10px 0 10px;
+
+}
+
+.box {
+
+  width: 50px;
+  height: 100%;
+  background-color: $color-tertairy;
+  border-radius: 0 10px 10px 0;
+  @include center;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform-origin: right;
+}
+
+.box i {
+  @include center;
+  font-size: 24px;
+  color: white;
+}
+
+
+.block__entry__entry-1 :hover .price,
+.block__entry__entry-2 :hover .price,
+.block__entry__entry-3 :hover .price,
+.block__entry__entry-3 :hover .price {
+  animation: glissement-text 0.3s linear forwards;
+  animation-play-state: running;
+}
+
+.block__entry__entry-1 :hover .box,
+.block__entry__entry-2 :hover .box,
+.block__entry__entry-3 :hover .box {
+  opacity: 1;
+  animation: progress-box 0.4s linear forwards;
+}
+
+.block__entry__entry-1 :hover .box i,
+.block__entry__entry-2 :hover .box i,
+.block__entry__entry-3 :hover .box i {
+  animation: check-rotation 0.4s linear forwards;
+}
+
+.block__entry__entry-1 :hover .text-ellipsis,
+.block__entry__entry-2 :hover .text-ellipsis,
+.block__entry__entry-3 :hover .text-ellipsis {
+  animation: glissement-ellipsis 0.4s linear forwards;
+}
+
+
+
+
+.block__flat__flat-1 :hover .price,
+.block__flat__flat-2:hover .price,
+.block__flat__flat-3:hover .price {
+  animation: glissement-text 0.3s linear forwards;
+  animation-play-state: running;
+}
+
+.block__flat__flat-1 :hover .box,
+.block__flat__flat-2:hover .box,
+.block__flat__flat-3:hover .box {
+  opacity: 1;
+  animation: progress-box 0.4s linear forwards;
+}
+
+.block__flat__flat-1:hover .box i,
+.block__flat__flat-2:hover .box i,
+.block__flat__flat-3:hover .box i {
+  animation: check-rotation 0.4s linear forwards;
+}
+
+.block__flat__flat-1:hover .text-ellipsis,
+.block__flat__flat-2:hover .text-ellipsis,
+.block__flat__flat-3:hover .text-ellipsis {
+  animation: glissement-ellipsis 0.4s linear forwards;
+}
+
+
+
+
+.block__dessert__desserts-1 :hover .price,
+.block__dessert__desserts-2 :hover .price,
+.block__dessert__desserts-3:hover .price {
+  animation: glissement-text 0.3s linear forwards;
+  animation-play-state: running;
+}
+
+.block__dessert__desserts-1 :hover .box,
+.block__dessert__desserts-2 :hover .box,
+.block__dessert__desserts-3:hover .box {
+  opacity: 1;
+  animation: progress-box 0.4s linear forwards;
+}
+
+.block__dessert__desserts-1 :hover .box i,
+.block__dessert__desserts-2 :hover .box i,
+.block__dessert__desserts-3:hover .box i {
+  animation: check-rotation 0.4s linear forwards;
+}
+
+.block__dessert__desserts-1:hover .text-ellipsis,
+.block__dessert__desserts-2:hover .text-ellipsis,
+.block__dessert__desserts-3:hover .text-ellipsis {
+  animation: glissement-ellipsis 0.4s linear forwards;
+}
+
+
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 300px;
+}
+
+@keyframes progress-box {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes check-rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glissement-text {
+  from {
+    padding-right: 10px;
+  }
+
+  to {
+    padding-right: 64px;
+  }
+}
+
+@keyframes glissement-ellipsis {
+  0% {
+    width: 300px;
+  }
+
+  40% {
+    width: 260px;
+  }
+
+  80% {
+    width: 230px;
+  }
+
+  100% {
+    width: 200px;
+  }
+}
+
+
+
+.block__entry__entry-1,
+.block__entry__entry-2,
+.block__entry__entry-3,
+.block__entry__entry-4 {
+  animation: apparition 0.5s ease-in forwards;
+  cursor: pointer;
+
+}
+
+.block__flat__flat-1,
+.block__flat__flat-2,
+.block__flat__flat-3 {
+  animation: apparition 1.5s ease-in forwards;
+  cursor: pointer;
+
+
+}
+
+.block__dessert__desserts-1,
+.block__dessert__desserts-2,
+.block__dessert__desserts-3 {
+  animation: apparition 3s ease-in forwards;
+
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+
+
+}
+
+
+.block__entry__entry-1 p,
+.block__entry__entry-2 p,
+.block__entry__entry-3 p,
+.block__entry__entry-4 p {
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+
+
+.entry-1-1 p,
+.entry-1-2 p,
+.entry-1-3 p,
+.entry-1-4 p {
+  font-size: 12px;
+  margin: 0;
+  margin-left: 20px;
+
+}
+
+.price {
+  width: 40px;
+}
+
+.color-grey {
+  color: #8f8d8f;
+
+}
+
+.entry-1-1,
+.entry-1-2,
+.entry-1-3,
+.entry-1-4 {
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+}
+
+.block__flat-titre {
+  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 20px;
+  color: #8f8d8f;
+  font-weight: lighter;
+
+  &::after {
+    @include after
+  }
+}
+
+
+.block__flat__flat-1 p,
+.block__flat__flat-2 p,
+.block__flat__flat-3 p {
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+
+.flat-1-1,
+.flat-1-2,
+.flat-1-3 {
+  @include between;
+  width: 94%;
+}
+
+.flat-1-1 p,
+.flat-1-2 p,
+.flat-1-3 p {
+  font-size: 12px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.block__dessert-titre {
+  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 20px;
+  color: #8f8d8f;
+  font-weight: lighter;
+
+  &::after {
+    @include after;
+  }
+
+}
+
+
+.block__dessert__desserts-1 p,
+.block__dessert__desserts-2 p,
+.block__dessert__desserts-3 p {
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+.dessert-1-1 {
+  @include between;
+  width: 94%;
+}
+
+.dessert-1-2,
+.dessert-1-3 {
+  @include between;
+  width: 94%;
+}
+
+.dessert-1-1 p,
+.dessert-1-2 p,
+.dessert-1-3 p {
+  font-size: 12px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.order {
+  margin: 30px 93px;
+  border-radius: 20px 20px;
+  height: 40px;
+  width: 187.5px;
+  background: $gradient;
+  color: white;
+  border: none;
+  box-shadow: 1px 3px 7px 0px #b0aeae;
+}
+
+.order:hover {
+  box-shadow: $box-shadows;
+  opacity: 0.5;
+}
+
+footer {
+  background: #353535;
+  color: white;
+  padding: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  bottom: 50px;
+
+
+
+  & h1 {
+    font-family: "Shrikhand";
+    padding: 20px 0 20px 0;
+    // font-size: 24px;
+
+  }
+
+  & .contact {
+    color: white;
+  }
+}
+
+.text,
+.text-partenaire {
+  display: flex;
+  align-items: center;
+}
+
+.text i {
+  margin-right: 20px;
+}
+
+.text-partenaire i {
+  margin-right: 12px;
+}
+
+#footer {
+  // margin-top: 180px;
+}
+
+
+/* ------------------------------------Tablette --------------------------------- */
+
+
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+
+
+  button {
+    display: block;
+  }
+
+  .order {
+    margin: auto;
+    margin-top: 100px;
+  }
+
+   .block__meal {
+
+    margin-left: auto;
+
+  }
+
+  footer {
+    @include around;
+    width: 100%;
+  }
+
+
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1299px) {
+
+
+  footer {
+    @include around;
+    width: 100%;
+  }
+
+
+  .block__meal {
+    // height: 1500px;
+    box-shadow: 1px 3px 7px 0px $color-secondary;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+
+  }
+
+  button {
+    display: block;
+  }
+
+  .order {
+    margin: auto;
+    margin-top: 100px;
+  }
+
+
+}
+
+
+
+/* ------------------------------------Desktop --------------------------------- */
+
+
+
+/*# sourceMappingURL=style.css.map */
+@media screen and (min-width: 1300px) {
+
+
+  .container {
+    width: auto;
+  }
+
+  header {
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    box-shadow: 3px 22px 14px -2px #8a8888;
+
+    .header {
+      margin-left: 0;
+    }
+
+  }
+
+  .img-menu {
+    z-index: 2;
+
+
+  }
+
+  .img-menu img {
+    height: 400px;
+    z-index: -1;
+  }
+
+  .apparence-heart,
+  .icon-card-heart {
+    margin-right: 200px;
+    top: 36px;
+
+  }
+
+  .block__meal {
+
+    width: 90%;
+    height: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+    grid-template-rows: 70px 500px 0.2fr;
+    margin-left: 5%;
+    padding-top: 0;
+    box-shadow: 1px 3px 7px 0px $color-secondary;
+
+  }
+
+  .block__meal h1,
+  .block__meal.fa-regular.fa-heart {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding-bottom: 35px;
+  }
+
+  .block__meal.fa-regular.fa-heart {
+    margin-top: 100px;
+  }
+
+  .order {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 150px auto;
+    width: 100%;
+  }
+
+
+
+  .block__entry {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: auto;
+    width: auto;
+    margin-top: 93px;
+
+  }
+
+  .block__flat {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: auto;
+    vertical-align: middle;
+
+  }
+
+  .block__flat-titre,
+  .block__dessert-titre {
+    margin: 0;
+    text-align: center;
+  }
+
+  .block__dessert {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: auto;
+
+  }
+
+  .block__entry h2 {
+    text-align: center;
+  }
+
+
+  .titre_menu {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  .titre_menu h1 {
+    margin-top: 10px;
+  }
+
+  .titre_menu h1,
+  .block__entry-titre,
+  .block__flat-titre,
+  .block__dessert-titre {
+    color: $color-primary;
+    margin-bottom: 20px;
+  }
+
+  .block__entry-titre {
+    position: relative;
+  }
+
+
+  .block__entry-titre::after {
+    content: "";
+    border-bottom: 3px solid #99E2D0;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    margin-left: 148px;
+  }
+
+  .block__flat-titre {
+    position: relative;
+  }
+
+  .block__flat-titre::after {
+
+    content: "";
+    border-bottom: 3px solid #99E2D0;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    margin-left: 172px;
+  }
+
+  .block__dessert-titre {
+    position: relative;
+  }
+
+  .block__dessert-titre::after {
+
+    content: "";
+    border-bottom: 3px solid #99E2D0;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    margin-left: 152px;
+  }
+
+  .img-menu img {
+    width: 100%;
+  }
+
+  footer {
+    @include around;
+    width: 100%;
+    font-size: 16px;
+
+    #footer {
+    position: absolute;
+    top: 100px;
+  }
+  }
+}

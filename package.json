@@ -1,0 +1,12 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./SASS/Layout/accueil.scss:./SASS/Layout/accueil.css ./SASS/Layout/menu.scss:./SASS/Layout/menu.css"
+  
+  },
+  "author": "",
+  "license": "ISC"
+}
