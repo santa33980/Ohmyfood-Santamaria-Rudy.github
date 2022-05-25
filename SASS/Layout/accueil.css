@@ -160,7 +160,7 @@ header img {
   align-items: center;
   margin-bottom: 50px;
 }
-.functioning h1 {
+.functioning h2 {
   font-weight: bold;
   font-size: 22px;
   margin-top: 30px;
@@ -340,9 +340,6 @@ footer .contact {
   }
 
   footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
   }
 }
