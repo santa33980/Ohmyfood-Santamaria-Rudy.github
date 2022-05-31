@@ -1,11 +1,3 @@
 {
-    "editor.fontSize": 6,
-    "editor.scrollbar.horizontalScrollbarSize": 10,
-    "editor.scrollbar.verticalScrollbarSize": 10,
-    "liveServer.settings.port": 5501,
-    "editor.autoIndent": "none",
-    "editor.defaultFormatter": "vscode.css-language-features",
-    "editor.fontWeight": "normal",
-    "editor.inlayHints.fontSize": 3,
-    "editor.lineHeight": 0
+    "liveServer.settings.port": 5501
 }
